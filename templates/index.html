@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div id="emoji" class="emoji">😂</div>
+
+        <h2>Random Joke</h2>
+
+        <p><b>{{ joke.setup }}</b></p>
+        <p>{{ joke.punchline }}</p>
+
+        <button onclick="refreshPage()">New Joke</button>
+    </div>
+</div>
+
+<script>
+    const emojis = ["😂","🤣","😆","😜","🤪","😎","😹"];
+
+    function setEmoji() {
+        const random = Math.floor(Math.random() * emojis.length);
+        document.getElementById("emoji").innerText = emojis[random];
+    }
+
+    function refreshPage() {
+        setEmoji();
+        setTimeout(() => location.reload(), 300);
+    }
+
+    setEmoji();
+</script>
+{% endblock %}

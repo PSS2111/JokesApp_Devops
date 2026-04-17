@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+
+    <div class="card advanced-card">
+
+        <h2 class="fade-in">🚀 About JokeApp</h2>
+        <p class="fade-in delay1">
+            A modern Flask web app delivering random jokes with a clean UI and DevOps deployment.
+        </p>
+
+        <!-- FEATURES -->
+        <h3 class="fade-in delay2">✨ Features</h3>
+
+        <div class="features">
+            <div class="feature-box">😂 Random Jokes</div>
+            <div class="feature-box">⚡ Fast API</div>
+            <div class="feature-box">🎨 Modern UI</div>
+            <div class="feature-box">🔄 Dynamic Emojis</div>
+            <div class="feature-box">🌐 Live Deployment</div>
+        </div>
+
+        <!-- DEVOPS PIPELINE -->
+        <h3 class="fade-in delay3">⚙️ DevOps Pipeline</h3>
+
+        <div class="pipeline">
+
+            <div class="step">💻 Code</div>
+            <div class="arrow">➡️</div>
+            <div class="step">📦 Docker</div>
+            <div class="arrow">➡️</div>
+            <div class="step">☁️ Render</div>
+            <div class="arrow">➡️</div>
+            <div class="step">🌍 Live</div>
+
+        </div>
+
+        <!-- Animated progress -->
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+
+        <!-- IMAGES -->
+        <h3 class="fade-in delay4">🖼️ Tech Stack</h3>
+
+        <div class="images">
+            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968672.png">
+            <img src="https://cdn-icons-png.flaticon.com/512/919/919853.png">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png">
+            <img src="https://cdn-icons-png.flaticon.com/512/888/888859.png">
+        </div>
+
+    </div>
+
+</div>
+
+<style>
+
+/* CARD WIDTH */
+.advanced-card {
+    width: 750px;
+}
+
+/* FEATURES GRID */
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.feature-box {
+    background: rgba(255,255,255,0.1);
+    margin: 10px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.feature-box:hover {
+    transform: scale(1.1);
+    background: rgba(255,255,255,0.2);
+}
+
+/* PIPELINE */
+.pipeline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.step {
+    margin: 10px;
+    padding: 10px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+}
+
+.arrow {
+    animation: move 1s infinite alternate;
+}
+
+@keyframes move {
+    from { transform: translateX(0); }
+    to { transform: translateX(5px); }
+}
+
+/* PROGRESS BAR */
+.progress-bar {
+    width: 100%;
+    background: #444;
+    border-radius: 20px;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 10px;
+    width: 0;
+    background: linear-gradient(90deg, #ff7b00, #ff5500);
+    animation: load 2s forwards;
+}
+
+@keyframes load {
+    to { width: 100%; }
+}
+
+/* IMAGES */
+.images img {
+    width: 60px;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+.images img:hover {
+    transform: scale(1.2) rotate(5deg);
+}
+
+/* FADE ANIMATIONS */
+.fade-in {
+    opacity: 0;
+    animation: fade 1s forwards;
+}
+
+.delay1 { animation-delay: 0.3s; }
+.delay2 { animation-delay: 0.6s; }
+.delay3 { animation-delay: 0.9s; }
+.delay4 { animation-delay: 1.2s; }
+
+@keyframes fade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+</style>
+
+{% endblock %}
